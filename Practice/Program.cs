@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -222,27 +223,52 @@ namespace Practice
     //    }
     //}
 
+    // palindrome number
     //internal class Program
     //{
     //    static void Main(string[] args)
     //    {
-    //        int num, r, sum =0, i;
+    //        int num, r, sum = 0, i;
     //        Console.Write("Input a positive integer: ");
     //        num = Convert.ToInt32(Console.ReadLine());
 
-    //        for (i = num; num != 0; num= num/10)
+    //        for (i = num; num != 0; num = num / 10)
     //        {
     //            r = num % 10;
-    //            sum = sum*10 + r;
+    //            sum = sum * 10 + r;
     //        }
     //        Console.WriteLine("Is {0} is a palindrome number?", i);
     //        if (i == sum)
     //        {
-    //            Console.WriteLine("true");
+    //            Console.WriteLine("Yes");
     //        }
     //        else
     //        {
-    //            Console.WriteLine("false");
+    //            Console.WriteLine("No");
+    //        }
+    //        Console.ReadKey();
+    //    }
+    //}
+
+    // palindrome string
+    //class Program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        string s, revs = "";
+    //        Console.WriteLine(" Enter string");
+    //        s = Console.ReadLine();
+    //        for (int i = s.Length - 1; i >= 0; i--) //String Reverse  
+    //        {
+    //            revs += s[i].ToString();
+    //        }
+    //        if (revs == s) // Checking whether string is palindrome or not  
+    //        {
+    //            Console.WriteLine("String is Palindrome \n Entered String Was {0} and reverse string is {1}", s, revs);
+    //        }
+    //        else
+    //        {
+    //            Console.WriteLine("String is not Palindrome \n Entered String Was {0} and reverse string is {1}", s, revs);
     //        }
     //        Console.ReadKey();
     //    }
@@ -616,4 +642,106 @@ namespace Practice
     //        Console.ReadKey();
     //    }
     //}
+
+
+    // Repeating Element in an array
+    //public class DuplicateElement
+    //{
+    //    public static void Main()
+    //    {
+    //        int[] arr = new int[] {1,2,3,4,2,7,8,8,3};
+    //        Console.WriteLine("Duplicate elements in given array: ");
+
+    //        for (int i = 0; i < arr.Length; i++)
+    //        {
+    //            for (int j = i+1; j < arr.Length; j++)
+    //            {
+    //                if (arr[i] == arr[j])
+    //                {
+    //                    Console.WriteLine(arr[j]);
+    //                }
+    //            }
+    //        }
+    //        Console.ReadKey();
+    //    }
+    //}
+
+    // Divide a long sentence into multiple sentences with length at most N so that no word is broken in multiple lines.
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x, cnt = 0; x = Convert.ToInt32(Console.ReadLine());
+            string s = "", temp = "", word = ""; s = Console.ReadLine();
+            
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (cnt < x)
+                {
+                    if (s[i] != ' ')
+                    {
+                        word += s[i];
+                        cnt++;
+                    }
+                    else
+                    {
+                        if (temp.Length == 0)
+                        {
+                            temp += word;
+                            word = "";
+                            cnt++;
+                        }
+                        else
+                        {
+                            if (temp.Length + word.Length + 1 < x)
+                            {
+                                temp += ' ' + word;
+                                word = "";
+                            }
+                            else
+                            {
+                                Console.WriteLine(temp);
+                                temp = word;
+                                cnt = word.Length;
+                                word = "";
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(temp);
+                    temp = "";
+                    //word = "";
+                    i--;
+                    cnt = 0;
+                }
+            }
+            if (word.Length != 0)
+            {
+                if (temp.Length == 0)
+                {
+                    temp += word;
+                    word = "";
+                }
+                else
+                {
+                    if (temp.Length + word.Length + 1 < x)
+                    {
+                        temp += ' ' + word;
+                        word = "";
+                    }
+                    else
+                    {
+                        Console.WriteLine(temp);
+                        temp = word;
+                        cnt = word.Length;
+                        word = "";
+                    }
+                }
+            }
+            if (temp.Length != 0) Console.WriteLine(temp);
+            Console.ReadKey();
+        }
+    }
 }
