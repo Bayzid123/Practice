@@ -666,82 +666,159 @@ namespace Practice
     //    }
     //}
 
-    // Divide a long sentence into multiple sentences with length at most N so that no word is broken in multiple lines.
-    class Program
+    //// Divide a long sentence into multiple sentences with length at most N so that no word is broken in multiple lines.
+    //class Program
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        int x, cnt = 0; x = Convert.ToInt32(Console.ReadLine());
+    //        string s = "", temp = "", word = ""; s = Console.ReadLine();
+
+    //        for (int i = 0; i < s.Length; i++)
+    //        {
+    //            if (cnt < x)
+    //            {
+    //                if (s[i] != ' ')
+    //                {
+    //                    word += s[i];
+    //                    cnt++;
+    //                }
+    //                else
+    //                {
+    //                    if (temp.Length == 0)
+    //                    {
+    //                        temp += word;
+    //                        word = "";
+    //                        cnt++;
+    //                    }
+    //                    else
+    //                    {
+    //                        if (temp.Length + word.Length + 1 < x)
+    //                        {
+    //                            temp += ' ' + word;
+    //                            word = "";
+    //                        }
+    //                        else
+    //                        {
+    //                            Console.WriteLine(temp);
+    //                            temp = word;
+    //                            cnt = word.Length;
+    //                            word = "";
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //            else
+    //            {
+    //                Console.WriteLine(temp);
+    //                temp = "";
+    //                //word = "";
+    //                i--;
+    //                cnt = 0;
+    //            }
+    //        }
+    //        if (word.Length != 0)
+    //        {
+    //            if (temp.Length == 0)
+    //            {
+    //                temp += word;
+    //                word = "";
+    //            }
+    //            else
+    //            {
+    //                if (temp.Length + word.Length + 1 < x)
+    //                {
+    //                    temp += ' ' + word;
+    //                    word = "";
+    //                }
+    //                else
+    //                {
+    //                    Console.WriteLine(temp);
+    //                    temp = word;
+    //                    cnt = word.Length;
+    //                    word = "";
+    //                }
+    //            }
+    //        }
+    //        if (temp.Length != 0) Console.WriteLine(temp);
+    //        Console.ReadKey();
+    //    }
+    //}
+
+    // Check Prime Number
+    //public class PrimeNumber
+    //{
+    //    public static void Main()
+    //    {
+    //        int n, i, m = 0;
+    //        Console.WriteLine("Enter number to check it is prime or not: ");
+    //        n = Convert.ToInt32(Console.ReadLine());
+    //        m = n / 2;
+
+    //        for (i = 2; i <= m; i++)
+    //        {
+    //            if (n%i == 0)
+    //            {
+    //                Console.WriteLine("Number is Not Prime");
+    //                break;
+    //            }
+    //            else
+    //            {
+    //                Console.WriteLine("Number is Prime");
+    //                break;
+    //            }
+    //        }
+
+    //        Console.ReadKey();
+    //    }
+    //}
+
+    // Print * pattern
+    public class StarPattern
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            int x, cnt = 0; x = Convert.ToInt32(Console.ReadLine());
-            string s = "", temp = "", word = ""; s = Console.ReadLine();
-            
-            for (int i = 0; i < s.Length; i++)
+            string s;
+            s = Console.ReadLine();
+            for (int row = 1; row <= 5; ++row)
             {
-                if (cnt < x)
+                for (int col = 1; col <= row; ++col)
                 {
-                    if (s[i] != ' ')
-                    {
-                        word += s[i];
-                        cnt++;
-                    }
-                    else
-                    {
-                        if (temp.Length == 0)
-                        {
-                            temp += word;
-                            word = "";
-                            cnt++;
-                        }
-                        else
-                        {
-                            if (temp.Length + word.Length + 1 < x)
-                            {
-                                temp += ' ' + word;
-                                word = "";
-                            }
-                            else
-                            {
-                                Console.WriteLine(temp);
-                                temp = word;
-                                cnt = word.Length;
-                                word = "";
-                            }
-                        }
-                    }
+                    Console.Write(s);
                 }
-                else
-                {
-                    Console.WriteLine(temp);
-                    temp = "";
-                    //word = "";
-                    i--;
-                    cnt = 0;
-                }
+                Console.WriteLine();
             }
-            if (word.Length != 0)
-            {
-                if (temp.Length == 0)
-                {
-                    temp += word;
-                    word = "";
-                }
-                else
-                {
-                    if (temp.Length + word.Length + 1 < x)
-                    {
-                        temp += ' ' + word;
-                        word = "";
-                    }
-                    else
-                    {
-                        Console.WriteLine(temp);
-                        temp = word;
-                        cnt = word.Length;
-                        word = "";
-                    }
-                }
-            }
-            if (temp.Length != 0) Console.WriteLine(temp);
             Console.ReadKey();
         }
     }
+
+    //Pangram
+    //class Pangram
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        string alpha = "abcdefghijklmnopqrstuvwxyz";
+    //        int count = 0;
+    //        Console.WriteLine("Enter a string");
+    //        string ip = Console.ReadLine();
+
+    //        foreach (char c in alpha)
+    //        {
+    //            foreach (char l in ip.ToLower())
+    //            {
+    //                if (c == l)
+    //                {
+    //                    count++;
+    //                    break;
+    //                }
+    //            }
+    //        }
+    //        if (count == 26)
+    //            Console.WriteLine("String is pangram");
+    //        else
+    //            Console.WriteLine("Not a pangram");
+
+    //        Console.ReadLine();
+    //    }
+    //}
 }
