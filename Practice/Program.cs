@@ -774,23 +774,23 @@ namespace Practice
     //}
 
     // Print * pattern
-    public class StarPattern
-    {
-        public static void Main(string[] args)
-        {
-            string s;
-            s = Console.ReadLine();
-            for (int row = 1; row <= 5; ++row)
-            {
-                for (int col = 1; col <= row; ++col)
-                {
-                    Console.Write(s);
-                }
-                Console.WriteLine();
-            }
-            Console.ReadKey();
-        }
-    }
+    //public class StarPattern
+    //{
+    //    public static void Main(string[] args)
+    //    {
+    //        string s;
+    //        s = Console.ReadLine();
+    //        for (int row = 1; row <= 5; ++row)
+    //        {
+    //            for (int col = 1; col <= row; ++col)
+    //            {
+    //                Console.Write(s);
+    //            }
+    //            Console.WriteLine();
+    //        }
+    //        Console.ReadKey();
+    //    }
+    //}
 
     //Pangram
     //class Pangram
